@@ -25,7 +25,6 @@ namespace MGT
         {
             TotalHours += (minutes / 60);
         }
-
         //Add filepath
         //add platform
     }

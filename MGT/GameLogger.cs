@@ -12,16 +12,25 @@ namespace MGT
 {
     static internal class GameLogger
     {
+        //implement serialization
         public static void SaveGameLibrary(ArrayList LoadedLibrary)
         {
             ArrayList GameLibrary = LoadedLibrary;
-            File savefile = new File("library.dat");
             //b.Serialize(Stream, object);
         }
 
         public static ArrayList LoadGameLibrary() {
-            
+            return new ArrayList();
         }
 
+        public static void SaveLogList(ArrayList LoadedLogList)
+        {
+            ArrayList LogList = new ArrayList();
+        }
+
+        public static ArrayList LoadLogList()
+        {
+            return new ArrayList(); 
+        }
     }
 }
