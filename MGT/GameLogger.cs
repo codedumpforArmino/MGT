@@ -12,7 +12,7 @@ namespace MGT
 {
     static internal class GameLogger
     {
-        //implement serialization
+        //implement serialization and deserialization
         public static void SaveGameLibrary(ArrayList LoadedLibrary)
         {
             ArrayList GameLibrary = LoadedLibrary;

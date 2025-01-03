@@ -21,6 +21,10 @@ namespace MGT
             TotalHours = 0;
         }
 
+        public string GetName()
+        {
+            return Name;
+        }
         public void IncrementHours(int minutes)
         {
             TotalHours += (minutes / 60);

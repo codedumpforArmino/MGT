@@ -137,6 +137,7 @@
             btn_Log.TabIndex = 1;
             btn_Log.Text = "Start Game";
             btn_Log.UseVisualStyleBackColor = true;
+            btn_Log.Click += btn_Log_Click;
             // 
             // lbl_Add
             // 
