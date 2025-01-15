@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             splitContainer1 = new SplitContainer();
             pictureBox1 = new PictureBox();
             splitContainer2 = new SplitContainer();
+            splitContainer3 = new SplitContainer();
+            txtBox_TimerOutput = new TextBox();
+            txtBox_ConsoleOutput = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             btn_Add = new Button();
@@ -38,14 +42,20 @@
             lbl_Add = new Label();
             cmb_Select = new ComboBox();
             txtb_GameName = new TextBox();
+            timer_LogLapsed = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
+            splitContainer2.Panel1.SuspendLayout();
             splitContainer2.Panel2.SuspendLayout();
             splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).BeginInit();
+            splitContainer3.Panel1.SuspendLayout();
+            splitContainer3.Panel2.SuspendLayout();
+            splitContainer3.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -82,12 +92,50 @@
             splitContainer2.Name = "splitContainer2";
             splitContainer2.Orientation = Orientation.Horizontal;
             // 
+            // splitContainer2.Panel1
+            // 
+            splitContainer2.Panel1.Controls.Add(splitContainer3);
+            // 
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(tableLayoutPanel1);
             splitContainer2.Size = new Size(617, 450);
             splitContainer2.SplitterDistance = 230;
             splitContainer2.TabIndex = 0;
+            // 
+            // splitContainer3
+            // 
+            splitContainer3.Dock = DockStyle.Fill;
+            splitContainer3.Location = new Point(0, 0);
+            splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            splitContainer3.Panel1.Controls.Add(txtBox_TimerOutput);
+            // 
+            // splitContainer3.Panel2
+            // 
+            splitContainer3.Panel2.Controls.Add(txtBox_ConsoleOutput);
+            splitContainer3.Size = new Size(617, 230);
+            splitContainer3.SplitterDistance = 205;
+            splitContainer3.TabIndex = 0;
+            // 
+            // txtBox_TimerOutput
+            // 
+            txtBox_TimerOutput.Location = new Point(26, 111);
+            txtBox_TimerOutput.Name = "txtBox_TimerOutput";
+            txtBox_TimerOutput.Size = new Size(150, 31);
+            txtBox_TimerOutput.TabIndex = 0;
+            txtBox_TimerOutput.Text = "00 : 00";
+            txtBox_TimerOutput.TextAlign = HorizontalAlignment.Center;
+            // 
+            // txtBox_ConsoleOutput
+            // 
+            txtBox_ConsoleOutput.Location = new Point(18, 37);
+            txtBox_ConsoleOutput.Multiline = true;
+            txtBox_ConsoleOutput.Name = "txtBox_ConsoleOutput";
+            txtBox_ConsoleOutput.Size = new Size(378, 163);
+            txtBox_ConsoleOutput.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -163,6 +211,11 @@
             txtb_GameName.Size = new Size(150, 31);
             txtb_GameName.TabIndex = 5;
             // 
+            // timer_LogLapsed
+            // 
+            timer_LogLapsed.Interval = 1000;
+            timer_LogLapsed.Tick += timer_LogLapsed_Tick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -176,9 +229,16 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            splitContainer2.Panel1.ResumeLayout(false);
             splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
+            splitContainer3.Panel1.ResumeLayout(false);
+            splitContainer3.Panel1.PerformLayout();
+            splitContainer3.Panel2.ResumeLayout(false);
+            splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).EndInit();
+            splitContainer3.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -196,5 +256,9 @@
         private Label lbl_Add;
         private Label label1;
         private TextBox txtb_GameName;
+        private SplitContainer splitContainer3;
+        private TextBox txtBox_ConsoleOutput;
+        private TextBox txtBox_TimerOutput;
+        private System.Windows.Forms.Timer timer_LogLapsed;
     }
 }
