@@ -43,6 +43,10 @@
             cmb_Select = new ComboBox();
             txtb_GameName = new TextBox();
             timer_LogLapsed = new System.Windows.Forms.Timer(components);
+            menuStrip1 = new MenuStrip();
+            filesToolStripMenuItem = new ToolStripMenuItem();
+            saveGameLibraryToolStripMenuItem = new ToolStripMenuItem();
+            loadGameLibraryToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -57,12 +61,13 @@
             splitContainer3.Panel2.SuspendLayout();
             splitContainer3.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 0);
+            splitContainer1.Location = new Point(0, 33);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -72,7 +77,7 @@
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
-            splitContainer1.Size = new Size(800, 450);
+            splitContainer1.Size = new Size(800, 417);
             splitContainer1.SplitterDistance = 179;
             splitContainer1.TabIndex = 0;
             // 
@@ -99,8 +104,8 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.Controls.Add(tableLayoutPanel1);
-            splitContainer2.Size = new Size(617, 450);
-            splitContainer2.SplitterDistance = 230;
+            splitContainer2.Size = new Size(617, 417);
+            splitContainer2.SplitterDistance = 213;
             splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -116,7 +121,7 @@
             // splitContainer3.Panel2
             // 
             splitContainer3.Panel2.Controls.Add(txtBox_ConsoleOutput);
-            splitContainer3.Size = new Size(617, 230);
+            splitContainer3.Size = new Size(617, 213);
             splitContainer3.SplitterDistance = 205;
             splitContainer3.TabIndex = 0;
             // 
@@ -216,12 +221,44 @@
             timer_LogLapsed.Interval = 1000;
             timer_LogLapsed.Tick += timer_LogLapsed_Tick;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { filesToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 33);
+            menuStrip1.TabIndex = 1;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // filesToolStripMenuItem
+            // 
+            filesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveGameLibraryToolStripMenuItem, loadGameLibraryToolStripMenuItem });
+            filesToolStripMenuItem.Name = "filesToolStripMenuItem";
+            filesToolStripMenuItem.Size = new Size(62, 29);
+            filesToolStripMenuItem.Text = "Files";
+            // 
+            // saveGameLibraryToolStripMenuItem
+            // 
+            saveGameLibraryToolStripMenuItem.Name = "saveGameLibraryToolStripMenuItem";
+            saveGameLibraryToolStripMenuItem.Size = new Size(270, 34);
+            saveGameLibraryToolStripMenuItem.Text = "Save Game Library";
+            saveGameLibraryToolStripMenuItem.Click += saveGameLibraryToolStripMenuItem_Click;
+            // 
+            // loadGameLibraryToolStripMenuItem
+            // 
+            loadGameLibraryToolStripMenuItem.Name = "loadGameLibraryToolStripMenuItem";
+            loadGameLibraryToolStripMenuItem.Size = new Size(270, 34);
+            loadGameLibraryToolStripMenuItem.Text = "Load Game Library";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(splitContainer1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             splitContainer1.Panel1.ResumeLayout(false);
@@ -241,7 +278,10 @@
             splitContainer3.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -260,5 +300,9 @@
         private TextBox txtBox_ConsoleOutput;
         private TextBox txtBox_TimerOutput;
         private System.Windows.Forms.Timer timer_LogLapsed;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem filesToolStripMenuItem;
+        private ToolStripMenuItem saveGameLibraryToolStripMenuItem;
+        private ToolStripMenuItem loadGameLibraryToolStripMenuItem;
     }
 }

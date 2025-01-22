@@ -8,10 +8,10 @@ namespace MGT
 {
     internal class Game
     {
-        string Name;
-        string GameFilePath;
-        string platform;
-        float TotalHours;
+        public string Name { get; set; }
+        public string GameFilePath { get; set; }
+        public string platform { get; set; }
+        public float TotalHours { get; set; }
 
         public Game(string intputName)
         {
@@ -21,10 +21,6 @@ namespace MGT
             TotalHours = 0;
         }
 
-        public string GetName()
-        {
-            return Name;
-        }
         public void IncrementHours(int minutes)
         {
             TotalHours += (minutes / 60);

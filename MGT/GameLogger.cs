@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text.Json;
+using System.Diagnostics;
 
 namespace MGT
 {
@@ -16,7 +18,9 @@ namespace MGT
         public static void SaveGameLibrary(ArrayList LoadedLibrary)
         {
             ArrayList GameLibrary = LoadedLibrary;
-            //b.Serialize(Stream, object);
+            string JSON_gameLibrary = JsonSerializer.Serialize(GameLibrary);
+
+            Debug.WriteLine(JSON_gameLibrary);
         }
 
         public static ArrayList LoadGameLibrary() {
@@ -25,7 +29,7 @@ namespace MGT
 
         public static void SaveLogList(ArrayList LoadedLogList)
         {
-            ArrayList LogList = new ArrayList();
+            ArrayList LogList = LoadedLogList;
         }
 
         public static ArrayList LoadLogList()

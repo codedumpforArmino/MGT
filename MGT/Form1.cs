@@ -11,6 +11,7 @@ namespace MGT
         Boolean isLogging = false;
         int minute;
         int second;
+
         public Form1()
         {
             InitializeComponent();
@@ -21,8 +22,8 @@ namespace MGT
         private void btn_Add_Click(object sender, EventArgs e)
         {
             Game newGame = new Game(txtb_GameName.Text.ToString());
-            GameLibrary.Add(newGame);
-            cmb_Select.Items.Add(newGame.GetName());
+            GameLibrary.Add(newGame.Name); //replace to object
+            cmb_Select.Items.Add(newGame.Name);
 
 
             //verify game then add
@@ -89,6 +90,12 @@ namespace MGT
             }
 
             txtBox_TimerOutput.Text = translate_timer(minute, second);
+        }
+
+        private void saveGameLibraryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Debug.WriteLine(GameLibrary);
+            GameLogger.SaveGameLibrary(GameLibrary);
         }
     }
 }
