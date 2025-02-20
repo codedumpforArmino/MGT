@@ -6,7 +6,7 @@ namespace MGT
 {
     public partial class Form1 : Form
     {
-        ArrayList GameLibrary;
+        List<Game> GameLibrary;
         ArrayList LogList;
         Boolean isLogging = false;
         int minute;
@@ -15,14 +15,15 @@ namespace MGT
         public Form1()
         {
             InitializeComponent();
-            GameLibrary = GameLogger.LoadGameLibrary();
+            //GameLibrary = GameLogger.LoadGameLibrary();
+            GameLibrary = new List<Game>();
             LogList = GameLogger.LoadLogList();
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
             Game newGame = new Game(txtb_GameName.Text.ToString());
-            GameLibrary.Add(newGame.Name); //replace to object
+            GameLibrary.Add(newGame); //replace to object
             cmb_Select.Items.Add(newGame.Name);
 
 

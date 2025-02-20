@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MGT
 {
+    [Serializable]
     internal class Game
     {
         public string Name { get; set; }
